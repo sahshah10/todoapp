@@ -2,9 +2,42 @@
 <html>
 <head>
     <title>Todo APP</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
-Write your code here
+
+<header>
+    <h1 class="heading"> TODO APP </h1>
+    <div class="input">
+        <input type="text" class="input-text">
+        <button class="input-button" type="submit"> Add </button>
+    </div>
+</header>
+
+<ul class = "navbar">
+    <li class="tab active" tab-id="all"> ALL </li>
+    <li class="tab" tab-id="completed"> COMPLETED </li>
+    <li class="tab" tab-id="pending"> PENDING </li>
+</ul>
+
+<ul class="todo-list">
+    <li class="task-row">
+        <span class="task"> task number 1 </span>
+        <button class="cross"> x </button>
+    </li>
+
+    <li class="task-row completed">
+        <span class="task"> task number 2 </span>
+        <button class="cross"> x </button>
+    </li>
+    
+    <li class="task-row">
+        <span class="task"> task number 3 </span>
+        <button class="cross"> x </button>
+    </li>
+</ul>
+
+<script src="js/todo.js"></script>
 </body>
 </html>
