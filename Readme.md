@@ -25,3 +25,8 @@
     ├── error.html
     ├── index.html
 ```
+
+## Extra features
+- Validation check to avoid entering empty string tasks.
+- You can also hit enter to add a new task instead of clicking the button
+- Can change task status to completed and back to pending. This change is immediately reflected on all tabs.
