@@ -1,11 +1,12 @@
 let completeTask = event => {
-    if (event.currentTarget.classList.contains('completed'))
-        event.currentTarget.classList.remove('completed');
+    classList = event.currentTarget.classList;
+    if (classList.contains('completed'))
+        classList.remove('completed');
     else
-        event.currentTarget.classList.add('completed');
+        classList.add('completed');
     
     if(document.getElementsByClassName('active')[0].getAttribute("tab-id") != "all")
-        event.currentTarget.classList.add("hidden");
+        classList.add("hidden");
 }
 
 let deleteTask = event => {
@@ -66,26 +67,27 @@ document.querySelectorAll('.tab').forEach(item => {
             tasks = document.getElementsByClassName("task-row");
             tab_id = cur.getAttribute('tab-id');
             for(task of tasks) {
-                is_completed = task.classList.contains("completed");
-                is_hidden = task.classList.contains("hidden");
+                classList = task.classList;
+                is_completed = classList.contains("completed");
+                is_hidden = classList.contains("hidden");
                 switch(tab_id) {
                     case "all":
                         if (is_hidden)
-                            task.classList.remove("hidden");
+                            classList.remove("hidden");
                     break;
 
                     case "completed":
                         if (is_completed && is_hidden)
-                            task.classList.remove("hidden");
+                            classList.remove("hidden");
                         else if (!is_completed && !is_hidden)
-                            task.classList.add("hidden");
+                            classList.add("hidden");
                     break;
                     
                     case "pending":
                         if (is_completed && !is_hidden)
-                            task.classList.add("hidden");
+                            classList.add("hidden");
                         else if (!is_completed && is_hidden)
-                            task.classList.remove("hidden");
+                            classList.remove("hidden");
                     break;
                 }
             }
@@ -95,4 +97,3 @@ document.querySelectorAll('.tab').forEach(item => {
         }
     })
 })
-
